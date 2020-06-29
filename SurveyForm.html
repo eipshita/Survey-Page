@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+
+    <style>
+        body{
+            background: linear-gradient(180deg, #60D1D5,#F7C498,#FB7080);
+            text-decoration-style: wavy;
+        }
+        .a{
+            background-color: #36959e;
+            border-radius: 10px ;
+            box-shadow: 10px 10px 10px #003c80;
+        }
+        #title{
+            
+            color: #ecf0ec;
+            text-shadow: 10px 10px 10px #2e248d;
+            text-align: center;
+            letter-spacing: 1em;
+        }
+        #description{
+            text-align: center;
+            letter-spacing: 0.5em;
+        }
+        #dropdown{
+            display:inline-block;
+            position:relative;
+        }
+        #dropdown button{
+                 border:none;
+                padding:8px 16px;
+                background-color:#166A09;
+                color:white;
+                transition:.3s;
+                cursor:pointer;
+        }
+  
+        #dropdown:hover button{
+            background-color:#39A628;
+        }
+  
+        #dropdown div{
+            background-color:#fff;
+            box-shadow:0 4px 8px rgba(0,0,0,0.2);
+            z-index:1;
+            visibility:hidden;
+            position:absolute;
+            min-width:100%;
+            opacity:0;
+            transition:.3s;
+         }
+  
+        #dropdown:hover div{
+            visibility:visible;
+            opacity:1;
+        }
+  
+        #dropdown div a{
+            display:block;
+            text-decoration:none;
+            padding:8px;
+            color:#000;
+            transition:.1s;
+            white-space:nowrap;
+        }
+  
+        #dropdown div a:hover{
+            background-color:#166A09;
+            color:#fff;
+        }
+        #submit{
+            background-color:#166A09 ;
+            color: ivory;
+            border: none;
+            min-width: 10%;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+        #submit:hover {
+            background-color:#39A628;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <h1 id="title">Survey Form</h1>
+        <p id="description">Please take a few moments to complete the survey.</p>
+    </div>
+    
+    <form id="survey-form">
+        <table width="90%" align="center">
+            <tr>
+               <th align="left"><h3>My Account Login</h3></th>
+                <th colspan="2" align="left"><h3>Registration</h3></th>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td rowspan="2" id="name-label">First Name*</td>
+                <td rowspan="2">
+                    <input type="text" maxlength="15" placeholder="Enter your first name"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="name" type="text" placeholder="Username"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td id="name-label" >Last Name*</td>
+                <td>
+                    <input type="text" maxlength="15" placeholder="Enter your last name"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                 <input type="password" placeholder="Password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                 <input id="submit" type="submit" value="Log in"> &nbsp;
+                 <a href="https://www.google.com">Forgot Password?</a>
+                </td> 
+                <td>Password*</td>
+                <td>
+                    <input type="password" placeholder="Enter a strong password">
+                </td>
+            </tr>
+            <tr>
+                <td>-------Or Sign in with-------</td>
+                <td>Confirm Password*</td>
+                <td>
+                    <input type="password" placeholder="Re-enter your password"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="dropdown">
+                        <button>Select Any</button>
+                        <div>
+                          <a href="https://www.twitter.com/">Twitter</a>
+                          <a href="https://www.facebook.com/">Facebook</a>
+                          <a href="https://www.googleplus.com/">Google<sup>+</sup></a>
+                        </div>                    
+                    </div>  
+                </td>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" id="male" name="name" value="male">
+                    <label for="male">Male</label> &nbsp; &nbsp; 
+                    <input type="radio" id="female" name="name" value="female">
+                    <label for="female">Female</label>&nbsp; &nbsp;
+                    <input type="radio" id="others" name="name" value="others">
+                    <label for="others">Others</label>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="15"></td>
+                <td id="number-label">Mobile/Cell No*</td>
+                <td>
+                   <input id="number" type="number" min="11" max="14" placeholder="Enter your mobile number">
+                </td>
+            </tr>
+            <tr>
+               <td id="email-label">E-mail*</td>
+               <td>
+                    <input id="email" type="email" placeholder="Please enter your Email" name="email"/>
+               </td>
+            </tr>
+            <tr>
+                <td id="email-label">Confirm E-mail*</td>
+                <td>
+                    <input type="email" placeholder="Re-write your Email" name="email">
+                </td>
+            </tr>
+            <tr>
+               <td>Address*</td>
+                <td>
+                   <textarea cols="30" rows="10"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Country*</td>
+                <td><input type="text"maxlength="15">
+                </td>
+            </tr>
+             <tr>
+               <td></td>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td><p id="h">Hobbies</p></td>
+                <td>
+                    <input type="checkbox" value="gardening">Gardening <br>
+                    <input type="checkbox" value="singing">Singing <br> 
+                    <input type="checkbox" value="dancing">Dancing <br>
+                    <input type="checkbox" value="Cooking">Cooking <br>
+                </td>
+            </tr>
+            <tr>
+                <td>Any Addional Comments</td>
+                <td>
+                    <textarea name="comments" id="" cols="30" rows="5"></textarea>
+                </td>
+            </tr>
+            <tr>
+                
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input id="submit" type="submit" value="Sign Up">
+                </td>
+            </tr>
+        </table>
+
+        <p align="center">
+            By clicking Sign Up,you have read and agree to the www.company.com <br/>
+        </p>
+    </form>
+</body>
+</html>
